@@ -1,6 +1,8 @@
 import conexao from "../database/conexao.js";
 import PizzaRepository from "../repositories/PizzaRepository.js";
 
+//métodos da classe,
+
 class PizzaController {
   async store(req, res) {
     try {

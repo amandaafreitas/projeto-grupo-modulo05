@@ -1,78 +1,28 @@
-import conexao from "../database/conexao.js";
+import { consulta } from "../database/conexao.js";
 
 class PizzaRepository {
   create(pizza) {
     const sql = "INSERT INTO pizzas SET ?;";
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, pizza, (erro, resultado) => {
-        {
-          if (erro) {
-            return reject("Não foi inserir uma nova pizza");
-          }
-          const resultadoTratado = JSON.parse(JSON.stringify(resultado));
-          return resolve(resultadoTratado);
-        }
-      });
-    });
+    return consulta(sql, pizza, "Não foi inserir uma nova pizza");
   }
 
   findAll() {
     const sql = "select * from pizzas;";
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, (erro, resultado) => {
-        {
-          if (erro) {
-            return reject("Não foi possivel listar as pizzas.");
-          }
-          const resultadoTratado = JSON.parse(JSON.stringify(resultado));
-          return resolve(resultadoTratado);
-        }
-      });
-    });
+    return consulta(sql, "Não foi possivel listar as pizzas.");
   }
 
   findById(id) {
     const sql = "SELECT * from pizzas WHERE id=?;";
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, id, (erro, resultado) => {
-        {
-          if (erro) {
-            return reject("Não foi possivel listar as pizzas.");
-          }
-          const resultadoTratado = JSON.parse(JSON.stringify(resultado));
-          return resolve(resultadoTratado);
-        }
-      });
-    });
+    return consulta(sql, id, "Não foi possivel encontrar essa pizza.");
   }
   update(pizza, id) {
     const sql = "UPDATE pizzas SET ?  WHERE id=?;";
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, [pizza, id], (erro, resultado) => {
-        {
-          if (erro) {
-            return reject("Não foi possivel listar as pizzas.");
-          }
-          const resultadoTratado = JSON.parse(JSON.stringify(resultado));
-          return resolve(resultadoTratado);
-        }
-      });
-    });
+    return consulta(sql, [pizza, id], "Não foi possivel atualizar essa pizza.");
   }
 
   delete(id) {
     const sql = "DELETE FROM pizzas WHERE id=?;";
-    return new Promise((resolve, reject) => {
-      conexao.query(sql, id, (erro, resultado) => {
-        {
-          if (erro) {
-            return reject("Não foi possivel listar as pizzas.");
-          }
-          const resultadoTratado = JSON.parse(JSON.stringify(resultado));
-          return resolve(resultadoTratado);
-        }
-      });
-    });
+    return consulta(sql, id, "Não foi possivel deletar essa pizza.");
   }
 }
 
