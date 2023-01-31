@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bdpizzaria` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bdpizzaria`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bdpizzaria
@@ -18,6 +16,31 @@ USE `bdpizzaria`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `bebidas`
+--
+
+DROP TABLE IF EXISTS `bebidas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bebidas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sabor` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `img_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bebidas`
+--
+
+LOCK TABLES `bebidas` WRITE;
+/*!40000 ALTER TABLE `bebidas` DISABLE KEYS */;
+INSERT INTO `bebidas` VALUES (1,'Coca-Cola','http://www.banca43.com.br/cdn/imagens/produtos/det/117939.jpg'),(2,'Fanta Laranja','http://d2r9epyceweg5n.cloudfront.net/stores/001/043/122/products/fanta-3501-f2e0836be024d42fc915698485225379-640-0.png'),(3,'Fanta Uva','http://d2r9epyceweg5n.cloudfront.net/stores/001/043/122/products/fanta-uva-3501-012134716f394f6f1a15698487625514-640-0.png');
+/*!40000 ALTER TABLE `bebidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pizzas`
 --
 
@@ -30,7 +53,7 @@ CREATE TABLE `pizzas` (
   `tamanho` char(1) COLLATE utf8_unicode_ci NOT NULL,
   `img_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +62,7 @@ CREATE TABLE `pizzas` (
 
 LOCK TABLES `pizzas` WRITE;
 /*!40000 ALTER TABLE `pizzas` DISABLE KEYS */;
-INSERT INTO `pizzas` VALUES (1,'Mussarela','G','https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-1932-5a1b7911dfda6e3c351c30de564da267.jpg'),(2,'Calabresa','G','https://pilotandofogao.com.br/wp-content/uploads/2016/05/Pizza-De-Calabresa.jpg'),(3,'Manjericao','G','https://img.freepik.com/fotos-premium/pizza-brasileira-com-queijo-mussarela-e-manjericao_206895-2005.jpg'),(4,'Baiana','G','https://sertaonalenhapizzaria.com.br/wp-content/uploads/2015/03/pizza-baiana-picante-001-620x395.png'),(6,'Chocolate','P','https://www.receiteria.com.br/wp-content/uploads/receitas-de-pizza-de-chocolate-730x449.jpg');
+INSERT INTO `pizzas` VALUES (1,'Mussarela','G','https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-1932-5a1b7911dfda6e3c351c30de564da267.jpg'),(2,'Calabresa','G','https://pilotandofogao.com.br/wp-content/uploads/2016/05/Pizza-De-Calabresa.jpg'),(3,'Manjericao','G','https://img.freepik.com/fotos-premium/pizza-brasileira-com-queijo-mussarela-e-manjericao_206895-2005.jpg'),(4,'Baiana','G','https://sertaonalenhapizzaria.com.br/wp-content/uploads/2015/03/pizza-baiana-picante-001-620x395.png'),(6,'Chocolate','G','https://www.receiteria.com.br/wp-content/uploads/receitas-de-pizza-de-chocolate-730x449.jpg');
 /*!40000 ALTER TABLE `pizzas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-30  9:50:05
+-- Dump completed on 2023-01-31 19:39:48
