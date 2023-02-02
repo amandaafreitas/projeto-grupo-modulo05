@@ -12,7 +12,7 @@ const Cabecalho = () => {
         </div>
 
         <ul className={styles.menu}>
-          <Link to="/home">
+          <Link to="/">
             <li>Home</li>
           </Link>
           <Link to="/produtos">
