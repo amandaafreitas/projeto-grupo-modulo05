@@ -1,9 +1,10 @@
+import Card from "../components/Card";
 import "../styles/home.css";
 
 const Home = () => {
   return (
     <>
-      <section className="carrosel-container">
+      <section className="carroselContainer">
         <div className="carrosel">
           <div className="slides">
             <input type="radio" name="slide" id="slide1" checked></input>
@@ -18,13 +19,10 @@ const Home = () => {
               ></img>
             </div>
             <div className="slide">
-              <img
-                src="pizza2-manjericao.jpg"
-                alt="sanduiche com salada e tomate"
-              ></img>
+              <img src="pizza2-manjericao.jpg" alt="pizza de manjericão"></img>
             </div>
             <div className="slide">
-              <img src="/pizza3-queijo.jpg" alt="hamburguer"></img>
+              <img src="/pizza3-queijo.jpg" alt="pizza de queijo"></img>
             </div>
           </div>
 
@@ -35,6 +33,12 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <h1>Os mais pedidos</h1>
+      <div className="cards">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </>
   );
 };

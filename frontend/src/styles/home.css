@@ -1,4 +1,4 @@
-.carrosel-container {
+.carroselContainer {
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -63,4 +63,14 @@
 
 input[type="radio"] {
   display: none;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+  color: #077d4e;
 }

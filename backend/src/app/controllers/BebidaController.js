@@ -1,4 +1,3 @@
-import conexao from "../database/conexao.js";
 import BebidaRepository from "../repositories/BebidaRepository.js";
 
 //métodos da classe,
