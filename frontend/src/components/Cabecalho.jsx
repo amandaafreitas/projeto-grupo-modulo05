@@ -12,19 +12,19 @@ const Cabecalho = () => {
         </div>
 
         <ul className={styles.menu}>
-          <Link to="/filmes">
+          <Link to="/home">
             <li>Home</li>
           </Link>
-          <Link to="/login">
+          <Link to="/produtos">
             <li>Produtos</li>
           </Link>
-          <Link to="/login">
+          <Link to="/faleconosco">
             <li>Fale Conosco</li>
           </Link>
-          <Link to="/filmes">
+          <Link to="/sobreus">
             <li>Sobre nós</li>
           </Link>
-          <Link to="/login">
+          <Link to="/nossaslojas">
             <li>Nossas lojas</li>
           </Link>
         </ul>
