@@ -13,7 +13,6 @@ router
   //Atualizar pizza
   .put("/usuarios/:id", UsuarioController.update)
   // deletar usuarios
-  .delete("/usuarios/:id", UsuarioController.delete)
-  .put("/usuarios/login", UsuarioController.login);
+  .delete("/usuarios/:id", UsuarioController.delete);
 
 export default router;

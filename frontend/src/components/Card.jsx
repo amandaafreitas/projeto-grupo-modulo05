@@ -1,23 +1,21 @@
 import styles from "./Card.module.css";
-const Card = () => {
+const Card = ({ nomeProduto, descricaoProduto, preco, imagem }) => {
   return (
     <div className={styles.produtosContainer}>
       <div className={styles.produto}>
         <img
-          src="imagens/burger-mais-pedido.jpg"
+          src={imagem}
           alt="hamburguer mais pedido"
           className={styles.produtosDestaqueImagens}
         ></img>
-        <span className={styles.produtosDestaqueTexto}>Hamburguer x-tudo</span>
-        <span>
-          Delicioso hmaburguer com tomates frescos,queijo mussarela e salada
-        </span>
+        <span className={styles.produtosDestaqueTexto}>{nomeProduto}</span>
+        <span>{descricaoProduto}</span>
         <img
-          src="imagens/mask_5_stars_sm.svg"
+          src="/5-stars.svg"
           alt="cinco estrelas"
           className={styles.estrelas}
         ></img>
-        <span className={styles.preco}>R$19,90</span>
+        <span className={styles.preco}>R${preco}</span>
         <button className={styles.btn}>
           <a href="#">Pedir agora</a>
         </button>

@@ -45,16 +45,6 @@ class UsuarioController {
       res.status(500).send("Não foi possivel excluir a usuario");
     }
   }
-
-  async login(req, res) {
-    const usuario = req.body;
-    console.log(usuario);
-    const resultado = await UsuarioRepository.login(
-      usuario.login,
-      usuario.senha
-    );
-    return res.json(resultado);
-  }
 }
 
 export default new UsuarioController();

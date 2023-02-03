@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "../styles/login.css";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const validacaoSchema = yup.object({
   nome: yup.string().required("O campo nome não pode ser vazio"),
@@ -14,6 +17,14 @@ const validacaoSchema = yup.object({
 });
 
 const Login = () => {
+  const [usuario, setUsuario] = useState({});
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/usuarios")
+  //     .then((resultado) => console.log(resultado));
+  // }, []);
+
   const {
     register,
     handleSubmit,
@@ -25,8 +36,23 @@ const Login = () => {
   const navigate = useNavigate();
 
   const valida = (data) => {
-    console.log("aki ", data);
-    navigate("/tela-edicao");
+    axios
+      .post("http://localhost:3000/login", {
+        login: data.nome,
+        senha: data.senha,
+      })
+      .then((resultado) => {
+        console.log(resultado.data);
+        if (resultado.data?.admin == "s") {
+          localStorage.setItem("usuario", JSON.stringify(resultado.data));
+          navigate("/faleconosco");
+        } else if (resultado.data?.admin == "n") {
+          localStorage.setItem("usuario", JSON.stringify(resultado.data));
+          navigate("/");
+        } else {
+          alert("Usuário não cadastrado");
+        }
+      });
   };
 
   return (

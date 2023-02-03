@@ -35,9 +35,32 @@ const Home = () => {
       </section>
       <h1>Os mais pedidos</h1>
       <div className="cards">
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          imagem={
+            "https://pilotandofogao.com.br/wp-content/uploads/2016/05/Pizza-De-Calabresa.jpg"
+          }
+          nomeProduto={"Pizza de Calabresa"}
+          descricaoProduto={"Deliciosa pizza de calabresa com massa caseira"}
+          preco={"28,00"}
+        />
+        <Card
+          imagem={
+            "https://img.freepik.com/fotos-premium/pizza-brasileira-com-queijo-mussarela-e-manjericao_206895-2005.jpg"
+          }
+          nomeProduto={"Pizza de Manjericão"}
+          descricaoProduto={
+            "Deliciosa pizza de manjericão feita pelo chef com ingredientes direto da horta"
+          }
+          preco={"42,00"}
+        />
+        <Card
+          imagem={
+            "https://sertaonalenhapizzaria.com.br/wp-content/uploads/2015/03/pizza-baiana-picante-001-620x395.png"
+          }
+          nomeProduto={"Pizza Baiana"}
+          descricaoProduto={"Deliciosa pizza baiana "}
+          preco={"32,00"}
+        />
       </div>
     </>
   );
