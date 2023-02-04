@@ -1,9 +1,9 @@
-#h1{
-     text-align: center;
-     font-size: 50px;
+h1 {
+  text-align: center;
+  background-color: rgb(136, 78, 8);
+  font-size: 50px;
 }
 
-.h2{ background-color: bisque;
-     margin-left: 10px;
-     font-size: 30px;
+.cards {
+  justify-content: space-around;
 }
