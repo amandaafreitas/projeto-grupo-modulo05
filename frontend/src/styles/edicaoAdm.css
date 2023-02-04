@@ -10,3 +10,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
+
+.bebidasCadastradas {
+  margin: 3rem 0;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}

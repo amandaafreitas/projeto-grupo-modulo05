@@ -9,6 +9,7 @@ import Sobreus from "./pages/Sobreus";
 import Nossaslojas from "./pages/Nossaslojas";
 import Login from "./pages/Login";
 import EdicaoAdm from "./pages/EdicaoAdm";
+import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/nossaslojas" element={<Nossaslojas />} />
           <Route path="/login" element={<Login />} />
           <Route path="/edicao-adm" element={<EdicaoAdm />} />
+          <Route path="/cadastro" element={<Cadastro />} />
         </Routes>
 
         <Rodape />

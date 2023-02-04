@@ -2,6 +2,7 @@ import "../styles/edicaoAdm.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CardEdicaoPizza from "../components/CardEdicaoPizza";
+import CardEdicaoBebida from "../components/CardEdicaoBebida";
 const EdicaoAdm = () => {
   const [pizzas, setPizzas] = useState([]);
   useEffect(() => {
@@ -14,9 +15,23 @@ const EdicaoAdm = () => {
         console.log("Deu tudo errado");
       });
   }, []);
+
+  //bebidas
+
+  const [bebidas, setBebidas] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/bebidas")
+      .then((response) => {
+        setBebidas(response.data);
+      })
+      .catch(() => {
+        console.log("Deu tudo errado");
+      });
+  }, []);
   return (
     <>
-      <h1 className="titulo-cadastrar">Editar pizas</h1>
+      <h1 className="titulo-cadastrar">Editar pizzas</h1>
       <CardEdicaoPizza botao="Cadastrar" setPizzasPaginas={setPizzas} />
       <div className="pizzasCadastradas">
         {pizzas.map((pizza) => {
@@ -30,6 +45,23 @@ const EdicaoAdm = () => {
               imagem={pizza.img_url}
               botao="Salvar"
               setPizzasPaginas={setPizzas}
+            />
+          );
+        })}
+      </div>
+      <h1 className="titulo-cadastrar">Editar bebidas</h1>
+      <CardEdicaoBebida botao="Cadastrar" setBebidasPaginas={setBebidas} />
+      <div className="bebidasCadastradas">
+        {bebidas.map((bebida) => {
+          return (
+            <CardEdicaoBebida
+              key={bebida.id}
+              idBebida={bebida.id}
+              sabor={bebida.sabor}
+              preco={bebida.preco}
+              imagem={bebida.img_url}
+              botao="Salvar"
+              setBebidasPaginas={setBebidas}
             />
           );
         })}

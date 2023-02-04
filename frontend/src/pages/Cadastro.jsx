@@ -1,8 +1,8 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "../styles/login.css";
-import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
+import "../styles/cadastro.css";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
@@ -16,7 +16,7 @@ const validacaoSchema = yup.object({
     .required("O campo senha não pode ser vazio"),
 });
 
-const Login = () => {
+const Cadastro = () => {
   const [usuario, setUsuario] = useState({});
 
   // useEffect(() => {
@@ -37,18 +37,14 @@ const Login = () => {
 
   const valida = (data) => {
     axios
-      .post("http://localhost:3000/login", {
+      .post("http://localhost:3000/usuarios", {
         login: data.nome,
         senha: data.senha,
       })
       .then((resultado) => {
         console.log(resultado.data);
-        if (resultado.data?.admin == "s") {
-          localStorage.setItem("usuario", JSON.stringify(resultado.data));
-          navigate("/edicao-adm");
-        } else if (resultado.data?.admin == "n") {
-          localStorage.setItem("usuario", JSON.stringify(resultado.data));
-          navigate("/produtos");
+        if (resultado.data.includes("sucesso")) {
+          alert("Usuário cadastrado com sucesso");
         } else {
           alert("Usuário não cadastrado");
         }
@@ -58,15 +54,15 @@ const Login = () => {
   return (
     <>
       <div className="login">
-        <h1 className="tituloLogin">Faça seu Login</h1>
+        <h1 className="tituloCadastro">Faça seu Cadastro</h1>
         <form onSubmit={handleSubmit(valida)} className="formulario">
           <div className="formularioContainer">
             <div className="inputContainer">
-              <label className="nomeLogin" htmlFor="nome">
+              <label className="nomeCadastro" htmlFor="nome">
                 Nome:
               </label>
               <input
-                className="inputLogin"
+                className="inputCadastro"
                 type="text"
                 id="nome"
                 name="nome"
@@ -76,11 +72,11 @@ const Login = () => {
               <p>{errors.nome?.message}</p>
             </div>
             <div className="inputContainer">
-              <label className="nomeLogin" htmlFor="senha">
+              <label className="nomeCadastro" htmlFor="senha">
                 Senha:
               </label>
               <input
-                className="inputLogin"
+                className="inputCadastro"
                 type="password"
                 id="senha"
                 name="senha"
@@ -89,18 +85,19 @@ const Login = () => {
               />
               <p>{errors.senha?.message}</p>
             </div>
+            <div className="inputContainer">
+              <label className="nomeCadastro" htmlFor="admin">
+                Administrador:
+              </label>
+              <select name="admin" id="admin" {...register("admin")}>
+                <option value="s">Sim</option>
+                <option value="n">Não</option>
+              </select>
+            </div>
             <div>
               <button className="botao" type="submit">
-                Entrar
+                Cadastrar
               </button>
-            </div>
-            <div className="container-cadastro">
-              <span className="titulo-cadastro">Não possui cadastro?</span>
-              <span className="titulo-cadastro">
-                Cadastre-se agora mesmo e tenha acesso a nossas deliciosas
-                pizzas!
-              </span>
-              <Link to="/cadastro">Cadastrar</Link>
             </div>
           </div>
         </form>
@@ -109,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Cadastro;

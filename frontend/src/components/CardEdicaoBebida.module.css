@@ -1,0 +1,46 @@
+.formularioContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.formulario {
+  min-width: 24.747rem;
+  min-height: 20.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fec417;
+  padding: 15px;
+}
+
+.nomeInput {
+  color: #ffff;
+}
+.input {
+  padding: 0.313rem;
+  margin: 0.625rem;
+  border-radius: 5px;
+}
+
+.botoes {
+  width: 18.75rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.botao {
+  padding: 0.625rem;
+  border-radius: 15px;
+  background-color: #ff7000;
+  color: #ffff;
+  font-weight: 700;
+}
+
+.botao:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
