@@ -1,26 +1,32 @@
+import "../styles/produtos.css";
+import Card from "../components/Card";
 
 const Produtos = () => {
     return (
         <>
-        <div>
+        <div id="h1">
             Nossos mais pedidos:
         </div>
-        <div>
-            Pizza 1 : <br />
-            Pizza 2 : <br />
-            Pizza 3 : <br />
+        <div className="h2">
+            Mussarela: <br />
+            Calabresa: <br />
+            Manjericão: <br />
+            Baiana: <br />
+            Chocolate: <br />
+
         </div>
 
-        <div>
-            Bebida 1: <br />
-            Bebida 2: <br />
-            Bebida 3: <br />
+        <div className="h2">
+            Coca Cola: <br />
+            Fanta Laranja: <br />
+            Fanta Uva: <br />
         </div>
 
-        <div>
-            Combo 1: <br />
-            Combo 2: <br />
-            Combo 3: <br />
+        <div className="h2">
+            Calabresa + Fanta Laranja: <br />
+            <Card />
+            Chocolate + Fanta Uva: <br />
+            Mussarela + Coca Cola: <br />
         </div>
         </>
     );
