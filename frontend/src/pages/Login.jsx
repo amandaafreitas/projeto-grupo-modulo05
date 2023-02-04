@@ -45,7 +45,7 @@ const Login = () => {
         console.log(resultado.data);
         if (resultado.data?.admin == "s") {
           localStorage.setItem("usuario", JSON.stringify(resultado.data));
-          navigate("/faleconosco");
+          navigate("/edicao-adm");
         } else if (resultado.data?.admin == "n") {
           localStorage.setItem("usuario", JSON.stringify(resultado.data));
           navigate("/");

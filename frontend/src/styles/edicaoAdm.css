@@ -1,0 +1,12 @@
+.titulo-cadastrar {
+  color: #077d4e;
+  font-size: 2rem;
+}
+
+.pizzasCadastradas {
+  margin: 3rem 0;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
