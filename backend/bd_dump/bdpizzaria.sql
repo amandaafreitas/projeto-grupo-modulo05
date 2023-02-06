@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bdpizzaria` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bdpizzaria`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bdpizzaria
@@ -52,9 +50,9 @@ DROP TABLE IF EXISTS `pizzas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pizzas` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `sabor` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `tamanho` char(1) COLLATE utf8_unicode_ci NOT NULL,
-  `img_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sabor` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `tamanho` char(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `img_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `preco` decimal(2,0) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
@@ -79,8 +77,8 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `senha` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `admin` char(1) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT 'n',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
@@ -95,6 +93,10 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,'amanda','1234','s'),(2,'joao','1234','n'),(3,'tony','1234','s'),(4,'milla','1234','n');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'bdpizzaria'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -105,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-05 20:40:47
+-- Dump completed on 2023-02-06  9:42:25
