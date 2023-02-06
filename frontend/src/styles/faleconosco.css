@@ -1,6 +1,23 @@
-#forma {
-  background-color: blanchedalmond;
-}
-#input {
+.test{
+  background-color: #ca5959;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+}
+
+.dois{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ select, option{
+  margin-left: 270px;
+ }
+.button{
+  float: right;
+  margin-top: 50px;
+  margin-left: 10px;
 }
