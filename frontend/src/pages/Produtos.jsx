@@ -19,8 +19,8 @@ const Produtos = () => {
             "https://pilotandofogao.com.br/wp-content/uploads/2016/05/Pizza-De-Calabresa.jpg"
           }
           nomeProduto={"Pizza de Calabresa"}
-          descricaoProduto={"Pizza de A"}
-          preco={"35,00"}
+          descricaoProduto={"Pizza de linguinça calabresa defumada"}
+          preco={"28,00"}
         />
 
         <Card
@@ -28,8 +28,8 @@ const Produtos = () => {
             "https://img.freepik.com/fotos-premium/pizza-brasileira-com-queijo-mussarela-e-manjericao_206895-2005.jpg"
           }
           nomeProduto={"Pizza de Manjericão"}
-          descricaoProduto={"Pizza de B"}
-          preco={"40,00"}
+          descricaoProduto={"Pizza de manjericão com margherita"}
+          preco={"42,00"}
         />
       </div>
       <div className="cards">
@@ -38,15 +38,15 @@ const Produtos = () => {
             "https://senhorreceitas.com/wp-content/uploads/2022/01/AdobeStock_419474126-scaled.jpeg"
           }
           nomeProduto={"Pizza de Baiana"}
-          descricaoProduto={"Pizza de C"}
-          preco={"45,00"}
+          descricaoProduto={"Pizza de baiana com linguiça calabresa, queijo musssarela, cebola e pimenta"}
+          preco={"32,00"}
         />
         <Card
           imagem={
             "https://www.receiteria.com.br/wp-content/uploads/receitas-de-pizza-de-chocolate-730x449.jpg"
           }
           nomeProduto={"Pizza de Chocolate"}
-          descricaoProduto={"Pizza de Choco"}
+          descricaoProduto={"Pizza de chocolate com morango"}
           preco={"50,00"}
         />
       </div>
@@ -82,3 +82,4 @@ const Produtos = () => {
 };
 
 export default Produtos;
+
